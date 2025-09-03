@@ -15,17 +15,15 @@ Targets: modern Linux. Non-Linux builds, but DEADLINE is disabled.
 
 ```bash
 g++ -std=c++20 -O2 -pthread -Iinclude rt_runtime.cpp main.cpp -o demo
-./demo
-
 ```
 
 Run the demo:
 
 ```bash
 # Caps are required for realtime and memlock, otherwise you'll see EPERM
-sudo setcap cap_sys_nice,cap_ipc_lock+ep build/demo
+sudo setcap cap_sys_nice,cap_ipc_lock+ep demo
 
-./build/demo
+./demo
 ```
 
 ## Doxygen docs
