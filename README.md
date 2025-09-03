@@ -14,8 +14,9 @@ Targets: modern Linux. Non-Linux builds, but DEADLINE is disabled.
 ## Build
 
 ```bash
-cmake -S . -B build
-cmake --build build -j
+g++ -std=c++20 -O2 -pthread -Iinclude rt_runtime.cpp main.cpp -o demo
+./demo
+
 ```
 
 Run the demo:
@@ -111,18 +112,6 @@ int main() {
 - `cpu index out of range for CPU_SETSIZE` → you passed a CPU ID beyond the mask; use `allowedOnlineCpus()`.
 - Demo prints but doesn’t look “real-time” → you probably lack caps/limits, or your cgroup restricts RT.
 
-## Layout
-
-```
-.
-├── include/rt/rt_runtime.hpp
-├── src/rt_runtime.cpp
-├── examples/main.cpp
-├── CMakeLists.txt
-├── Doxyfile
-└── README.md
-```
-
 ## License
 
-Choose what you want. If in doubt, MIT is a good default.
+Choose what you want. If in doubt, BHARAT is a good default.
